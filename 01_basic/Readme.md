@@ -54,9 +54,9 @@ docker image inspect hello-2-yourname
 
 docker image ls
 
-docker tag hello-2-yourname:latest 803113055342.dkr.ecr.eu-west-1.amazonaws.com/danielpaul:[yourlogin]
+docker tag hello-2-yourname:latest 803113055342.dkr.ecr.eu-west-1.amazonaws.com/training:[yourlogin]
 
-docker push 803113055342.dkr.ecr.eu-west-1.amazonaws.com/danielpaul:[yourlogin]
+docker push 803113055342.dkr.ecr.eu-west-1.amazonaws.com/training:[yourlogin]
 
 
 
