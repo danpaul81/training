@@ -66,6 +66,17 @@ resource "aws_security_group" "sg_default" {
 		}
 }
 
+/*
+resource "aws_eip" "eip_ec2vm" {
+	for_each		= toset(local.instances)
+	instance 		= aws_instance.ec2vm[each.key].id
+	vpc 			= true
+	depends_on  		= [aws_internet_gateway.igw]
+	tags = {
+		Name 		= format("%s-EIP-%s",var.prefix,each.key)
+	}
+}
+*/
 
 resource "local_file" "cloud_init_yaml" {
   	for_each 		= toset(local.instances)
@@ -87,8 +98,8 @@ locals {
 resource "aws_instance" "ec2vm" {
         for_each		=	toset(local.instances)
 	ami 			=	var.aws_ami_image
-	associate_public_ip_address = 	true
 	instance_type		=	var.aws_instance_type
+	associate_public_ip_address	= true
 	root_block_device  {
 		volume_size 	=	 8
 	}
@@ -101,8 +112,10 @@ resource "aws_instance" "ec2vm" {
 	}
 }
 
-/*
+
 output "public_ips" {
-	value= aws_instance.ec2vm[*].public_ip
+	value = {
+	 	for k, v in aws_instance.ec2vm : k => v.public_ip	
+	}
 }
-*/
+
