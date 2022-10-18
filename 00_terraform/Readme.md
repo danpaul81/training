@@ -2,11 +2,12 @@
 
 configure a local aws cli with credentials allowing creation of VPC/IGW/EC2 VM
 
-create IAM User with following Permission "AmazonEC2ContainerRegistryPowerUser" and create Access Key ID and Secret Access Key ID
+create IAM User with Permission "AmazonEC2ContainerRegistryPowerUser" and create Access Key ID and Secret Access Key ID
 (from now on referenced as ecr-user)
+
 Also note the AWS Account ID of this user
 
-The key/secret will be stored plain text within the VMs. So you should least privilege them by limit permissions!
+Note: The key/secret will be stored plain text within the VMs. So you should least privilege them by limit permissions!
 
 create a AWS ECR Repository and note the repository link. This will be needed to push container Images during the Lab Sessions
 
