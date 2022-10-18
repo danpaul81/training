@@ -27,8 +27,8 @@ Create .tfvars file
 ```
 ecr_access_key="aws access key for ecr-user"
 ecr_secret_access_key="aws secret access key for ecr-user"
-prefix="naming prefix for ec2 resources"
-aws_account_id = "123455667"
+prefix="naming prefix for ec2 resources e.g. dpaul-training"
+aws_account_id = "ecr-user account id e.g. 1234-5678-0815"
 ```
 
 Default user password of VMs is 20portworx22. Can be changed in cloud-init.tpl passwd setting.
