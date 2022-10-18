@@ -1,35 +1,48 @@
 
+### Running a web-service app & exploring container
 
-Run a container including a webservice
+#### 1. Run app and expose webservice
 
-docker run --name webservice -p 5000:5000 803113055342.dkr.ecr.eu-west-1.amazonaws.com/danielpaul:latest
+run a container including a webservice
 
-Now open http://[IP of your VM]:5000 in your browser
+`docker run --name webservice -p 5000:5000 803113055342.dkr.ecr.eu-west-1.amazonaws.com/danielpaul:latest`
 
+--name defines a name for the running container
+-p exposes container app running on port 5000 to node VM port 5000
 
-docker inspect webservice
+As this container now displays its log on the console open a second console to your vm
 
-note the "mergeddir (or run docker inspect webservice |grep MergedDir)
+open http://[IP of your VM]:5000 in your browser
 
-sudo ls [MergedDir] will show root filesystem inside container
-sudo ls [MergedDir]/golangweb will show content of application directory
+#### 2. Inspect content of running container
 
-Explore access into container environment
+##### 2.1 Inspect Container
 
-docker exec -it webservice /bin/bash
+`docker inspect webservice`
+
+note the "mergeddir (or run `docker inspect webservice | grep MergedDir`)
+
+`sudo ls [MergedDir]` will show root filesystem inside container
+
+`sudo ls [MergedDir]/golangweb` will show content of application directory
+
+##### 2.1 Execute into container environment
+
+`docker exec -it webservice /bin/bash`
 
 You now have a root shell inside the container
 
-try to create a file inside /golangweb/
+try to create a file inside directory /golangweb/
 
-touch /golangweb/helloworld
+`touch /golangweb/helloworld`
 
 Exit container
-exit
 
-re-run sudo ls [MergedDir]/golangweb
+`exit`
 
-should show newly created file
+re-run `sudo ls [MergedDir]/golangweb`
+
+should show newly created file in the host file system
 
 
 
