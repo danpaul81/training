@@ -1,8 +1,8 @@
-### Delivering a containerized App
+### Delivering a basic containerized App
 <br>
 #### Check & Build your App
 <br>
-change into \~/training/01\_basic\_container directory
+change into `~/training/01_basic_container` directory
 review hello.go file
 Its a golang script showing "Hello World" and showing -if exists- content of greeting.txt file
 compile the script
@@ -37,10 +37,13 @@ Run & Inspect the Container
 note the "UpperDir" entry. You can run "sudo ls [UpperDir]" and will see content of container
 If you just want to see the "UppderDir" entry run docker inspect hello\-dpaul:v1 \| grep UpperDir
 <br>
-#### Add a file to container
+#### Add a file to container (version 2)
 <br>
-`echo "Greetings from [yourloginname]" > greeting.txt`
-
+<br>
+```
+echo "Greetings from [yourloginname]" > greeting.txt
+```
+<br>
 edit Dockerfile, add another COPY command. This will result in adding a new storage layer to container image
 
 FROM scratch
