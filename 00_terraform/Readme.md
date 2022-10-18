@@ -26,9 +26,9 @@ maggie_simpson
 Create .tfvars file
 
 ```
-ecr_access_key="aws access key for ecr-user"
-ecr_secret_access_key="aws secret access key for ecr-user"
-prefix="naming prefix for ec2 resources e.g. dpaul-training"
+ecr_access_key = "aws access key for ecr-user"
+ecr_secret_access_key = "aws secret access key for ecr-user"
+prefix = "naming prefix for ec2 resources e.g. dpaul-training"
 aws_account_id = "ecr-user account id e.g. 1234-5678-0815"
 ```
 
