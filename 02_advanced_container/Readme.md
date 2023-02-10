@@ -35,9 +35,9 @@ The Website should be displayed, console log will show access to the webserver
 
 #### 2. Inspect content of running container
 
-##### 2.1 Inspect Container
-
 open a second ssh console to your vm
+
+##### 2.1 Inspect Container
 
 `docker inspect nginx`
 
