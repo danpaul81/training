@@ -37,9 +37,11 @@ The Website should be displayed, console log will show access to the webserver
 
 ##### 2.1 Inspect Container
 
+open a second ssh console to your vm
+
 `docker inspect nginx`
 
-note the "mergeddir (or run `docker inspect webservice | grep MergedDir`)
+note the "mergeddir (or run `docker inspect nginx | grep MergedDir`)
 
 `sudo ls [MergedDir]` will show root filesystem inside container
 
